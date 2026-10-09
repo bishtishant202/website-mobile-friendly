@@ -1,0 +1,109 @@
+/* ==========================================
+   1. DESKTOP BASE STYLES (Default Viewport)
+   ========================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Style (Desktop: Side-by-side row layout) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 20px 40px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Layout Container (Desktop: Two side-by-side columns) */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.content-area {
+    flex: 3;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+    flex: 1;
+    background: #e1e8ed;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Image Fluidity: Stops large images from breaking layouts */
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   2. MOBILE-FRIENDLY CSS MEDIA QUERY
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Stack navigation links vertically and center text */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* 2. Change horizontal flex rows into a vertical column layout */
+    .main-container {
+        flex-direction: column;
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    /* 3. Reduce heading sizes for smaller viewports */
+    .content-area h1 {
+        font-size: 1.8rem;
+    }
+
+    /* 4. Ensure sidebar drops smoothly below the main content area */
+    .sidebar {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
